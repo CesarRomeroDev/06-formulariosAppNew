@@ -17,6 +17,13 @@ export class BasicosComponent implements OnInit {
    */
   @ViewChild('miFormulario') miFormulario!: NgForm;
 
+  //para establecer valores pre-establecidos en el template
+  initForm = {
+    producto: '',
+    precio: 0,
+    existencia: 0
+  }
+
   constructor() { }
 
   ngOnInit(): void {
@@ -34,9 +41,19 @@ export class BasicosComponent implements OnInit {
 
   /**utilizamos el @viewChild por eso es que ya cometamos la referencia y borramos la referencia en el html*/
   // guardar(miFormulario: NgForm) 
+  /**
+   * .resetForm: despues de enviar la informacion, se limpia el servidor.
+   * se pueden estableces numeros por default al limpiar el formulario, sola gregando el nombre del input
+   */
 
   guardar(){
-    console.log(this.miFormulario);
+    // console.log(this.miFormulario);
+    console.log('Posteo Correcto');
+
+    this.miFormulario.resetForm({
+      precio: 0,
+      existencia: 0
+    });
   }
 
 }

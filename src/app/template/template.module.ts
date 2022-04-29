@@ -16,7 +16,7 @@ import { CustomMinDirective } from './directives/custom-min.directive';
     DinamicosComponent,
     SwitchesComponent,
 
-    CustomMinDirective
+    CustomMinDirective    //Directiva para validar
   ],
   imports: [
     CommonModule,

@@ -18,14 +18,14 @@
                     <!--FormsModule: Es necesario tener agregado en el modulo para tener control del formulario-->
                     <!--tipe: recibe texto-->
                     <!--class: clases de bootstrap-->
-                    <!--ngModel: para que los campos, sean parte de este formulario nos interesa el valor-->
+                    <!--ngModel: para que los campos, sean parte de este formulario nos interesa el valor y se pone en llaves para manipularlo-->
                     <!--name: Es necesario el name , ya que por si solo el ngModel manda error en consola-->
                     <!--placeholder: descripción del input-->
                     <!--required: indicarle que necesita un valor-->
                     <!--minlength: el minimo de caracteres tienen que ser 3-->
                     <input type="text" 
                            class="form-control" 
-                           ngModel 
+                           [ngModel]="initForm.producto"  
                            name="producto" 
                            placeholder="Nombre del Producto"
                            required 
@@ -42,7 +42,7 @@
                 <div class="col-sm-9">
                     <input type="number" 
                            class="form-control" 
-                           ngModel 
+                           [ngModel]="initForm.precio" 
                            name="precio" 
                            placeholder="Precio del Producto"
                            required>
@@ -56,16 +56,17 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Existencias</label>
                 <div class="col-sm-9">
-                    <!--customMin: nombre de la directiva-->
+                    <!--customMin: nombre de la directiva personalizada-->
                     <!--Las directivas nos ayudan a validar formularios al dar clic en el boton, si es correcta la informacion hace la función-->
-                    <!--[minimo]: Le va a exterder este atributo minimo a el input-->
+                    <!--[minimo]: Le va a exterder este atributo minimo a el input(valor minimo)-->
                     <input type="number" 
                            class="form-control" 
-                           ngModel 
+                           [ngModel]="initForm.existencia" 
                            name="existencia"
                            customMin
                            [minimo]="0"
-                           placeholder="Existencias del Producto">
+                           placeholder="Existencias del Producto"
+                           required>
                 </div>
             </div>
             <div class="row">
